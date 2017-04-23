@@ -3,9 +3,10 @@ import {
   OnInit
 } from '@angular/core';
 
-import { AppState } from '../app.service';
-import { TitleService } from './title';
-import { XLargeDirective } from './x-large';
+import { AppState } from '../../app.service';
+
+import { TitleService } from '../../core/services/title';
+import { XLargeDirective } from '../../core/directives/x-large';
 
 @Component({
   selector: 'home',
