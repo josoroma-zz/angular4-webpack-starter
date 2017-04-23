@@ -1,0 +1,23 @@
+<div>
+  <h2>{{ title }}</h2>
+
+  <div>
+    <h4>Local State</h4>
+
+    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
+
+      <input
+        type="text"
+        name="localStateValue"
+        [(ngModel)]="localState.value"
+        placeholder="Mutate App State"
+        autofocus>
+
+      <button>Change</button>
+    </form>
+
+    <pre>this.localState = {{ localState | json }}</pre>
+
+  </div>
+
+</div>

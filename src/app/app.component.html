@@ -1,0 +1,22 @@
+    <nav>
+      <a [routerLink]=" ['./home'] "
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        Home
+      </a>
+      <a [routerLink]=" ['./page'] "
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        Page
+      </a>
+      <a [routerLink]=" ['./about'] "
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        About
+      </a>
+    </nav>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer>
+      <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
+    </footer>
