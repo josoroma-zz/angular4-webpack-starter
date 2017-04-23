@@ -1,28 +1,28 @@
 import {
   Component,
-  OnInit,
-  OnDestroy
+  OnInit
 } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { User } from './user';
-import { UserService } from './user.service';
+import { Observable } from 'rxjs/Observable';
+
+import { User } from '../../core/interfaces/user';
+import { UserService } from '../../core/services/user/user.service';
 
 console.log('`Observable` component loaded asynchronously');
 
 @Component({
   selector: 'observable',
-  providers: [UserService],
+  providers: [ UserService ],
   templateUrl: './observable.component.html',
   styleUrls: ['./observable.component.css']
 })
-export class ObservableComponent implements OnInit, OnDestroy {
+export class ObservableComponent implements OnInit {
   public localState: any;
 
   public errorMessage: string;
-  public users: User[];
-  public userSubscription: any;
+  public users: Observable<User[]>;
 
   constructor(
     public route: ActivatedRoute,
@@ -35,21 +35,10 @@ export class ObservableComponent implements OnInit, OnDestroy {
     this.getUsers();
   }
 
-  public ngOnDestroy() {
-    console.log('`Observable` component - ngOnDestroy');
-
-    this.userSubscription.unsubscribe();
-  }
-
   public getUsers() {
-    this.userSubscription = this.userService.get().subscribe(
-      (users) => {
-        this.users = users;
-      },
-      (error) => {
-        this.users = [];
-        console.log('error =>', error);
-      }
-    );
+    // Subscribe to entire collection
+    this.users = this.userService.users;
+    // Load all users
+    this.userService.all();
   }
 }

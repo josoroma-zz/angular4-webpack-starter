@@ -3,5 +3,5 @@
 <h3>Users</h3>
 
 <ul>
-  <li *ngFor="let user of users">{{ user.username }} <{{ user.email }}></li>
+  <li *ngFor="let user of users | async">{{ user.username }} <{{ user.email }}></li>
 </ul>
