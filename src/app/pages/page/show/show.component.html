@@ -1,9 +1,12 @@
-<h2>Show</h2>
+<md-card-title>
+  Show Module
+</md-card-title>
 
-<span>
-  <a [routerLink]=" ['/page'] ">
-    Page
-  </a>
-</span>
+<md-card-content>
+  <button
+    color="primary"
+    [routerLink]=" ['/page'] "
+    md-button>Page</button>
+</md-card-content>
 
 <router-outlet></router-outlet>

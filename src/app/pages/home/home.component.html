@@ -1,23 +1,22 @@
-<div>
-  <h2>{{ title }}</h2>
+<md-card-title>
+  {{ title }} Component
+</md-card-title>
 
-  <div>
-    <h4>Local State</h4>
-
-    <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
-
+<md-card-content>
+  <form (ngSubmit)="submitState(localState.value)" autocomplete="off">
+    <md-input-container>
       <input
+        mdInput
         type="text"
         name="localStateValue"
         [(ngModel)]="localState.value"
         placeholder="Mutate App State"
         autofocus>
+    </md-input-container>
+    <button
+      color="primary"
+      md-button>Change</button>
+  </form>
 
-      <button>Change</button>
-    </form>
-
-    <pre>this.localState = {{ localState | json }}</pre>
-
-  </div>
-
-</div>
+  <pre>this.localState = {{ localState | json }}</pre>
+</md-card-content>

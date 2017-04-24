@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewEncapsulation
 } from '@angular/core';
+
 import { AppState } from './app.service';
 
 /*
@@ -18,6 +19,8 @@ import { AppState } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  public isDarkTheme = true;
+
   constructor(
     public appState: AppState
   ) {}

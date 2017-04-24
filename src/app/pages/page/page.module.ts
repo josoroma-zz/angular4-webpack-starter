@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './page.routes';
 import { PageComponent } from './page.component';
 
+import { MaterialModule } from '@angular/material';
+
 console.log('`Page` bundle loaded asynchronously');
 
 @NgModule({
@@ -15,7 +17,8 @@ console.log('`Page` bundle loaded asynchronously');
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    MaterialModule
   ],
 })
 export class PageModule {

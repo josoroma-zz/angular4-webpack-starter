@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './show.routes';
 import { ShowComponent } from './show.component';
 
+import { MaterialModule } from '@angular/material';
+
 console.log('`Show` bundle loaded asynchronously');
 
 @NgModule({
@@ -17,6 +19,7 @@ console.log('`Show` bundle loaded asynchronously');
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
+    MaterialModule
   ],
 })
 export class ShowModule {
