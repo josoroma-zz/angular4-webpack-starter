@@ -33,6 +33,7 @@ export class ObservableComponent implements OnInit {
     console.log('`Observable` component - ngOnInit');
 
     this.getUsers();
+
   }
 
   public getUsers() {

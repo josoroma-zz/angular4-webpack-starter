@@ -28,6 +28,7 @@ import { AppState, InternalStateType } from './app.service';
 
 import { HomeComponent } from './pages/home';
 import { ObservableComponent } from './pages/observable';
+import { ObservableContainerComponent } from './pages/observable/observable.container';
 import { NoContentComponent } from './pages/no-content';
 
 import { XLargeDirective } from './core/directives/x-large';
@@ -58,6 +59,7 @@ type StoreType = {
   declarations: [
     AppComponent,
     ObservableComponent,
+    ObservableContainerComponent,
     HomeComponent,
     NoContentComponent,
     XLargeDirective
