@@ -3,17 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { routes } from './show.routes';
-import { ShowComponent } from './show.component';
+import { routes } from './module.routes';
+import { ModuleComponent } from './module.component';
 
 import { MaterialModule } from '@angular/material';
 
-console.log('`Show` bundle loaded asynchronously');
+console.log('`Module` bundle loaded asynchronously');
 
 @NgModule({
   declarations: [
-    // Components / Directives/ Pipes
-    ShowComponent,
+    ModuleComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +21,6 @@ console.log('`Show` bundle loaded asynchronously');
     MaterialModule
   ],
 })
-export class ShowModule {
+export class ModuleModule {
   public static routes = routes;
 }

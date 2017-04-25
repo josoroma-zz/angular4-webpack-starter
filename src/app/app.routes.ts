@@ -10,6 +10,6 @@ export const ROUTES: Routes = [
   { path: '',      component: HomeComponent },
   { path: 'home',  component: HomeComponent },
   { path: 'observable', component: ObservableComponent },
-  { path: 'page', loadChildren: './pages/page#PageModule'},
+  { path: 'module', loadChildren: './pages/module#ModuleModule'},
   { path: '**',    component: NoContentComponent },
 ];
