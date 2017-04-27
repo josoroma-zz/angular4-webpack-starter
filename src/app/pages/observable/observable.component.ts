@@ -33,10 +33,9 @@ export class ObservableComponent implements OnInit {
     console.log('`Observable` component - ngOnInit');
 
     this.getUsers();
-
   }
 
-  public getUsers() {
+  public getUsers(): any {
     // Subscribe to entire collection
     this.users = this.userService.users;
     // Load all users

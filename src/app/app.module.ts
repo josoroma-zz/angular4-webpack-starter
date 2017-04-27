@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
-  ApplicationRef
+  ApplicationRef,
+  ErrorHandler
 } from '@angular/core';
 import {
   removeNgStyles,
@@ -25,6 +26,8 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+
+import { GlobalErrorHandler } from './core/classes/globalErrorHandler';
 
 import { HomeComponent } from './pages/home';
 import { ObservableComponent } from './pages/observable';
@@ -74,7 +77,11 @@ type StoreType = {
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
-    APP_PROVIDERS
+    APP_PROVIDERS,
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    }
   ]
 })
 export class AppModule {

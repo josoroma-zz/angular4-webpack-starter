@@ -18,7 +18,9 @@ export class UserService {
     users: User[]
   };
 
-  constructor(private http: Http) {
+  constructor(
+    private http: Http
+  ) {
     this.baseUrl =  'https://jsonplaceholder.typicode.com';
     this.dataStore = {users: []};
     this._users = <BehaviorSubject<User[]>> new BehaviorSubject([]);
@@ -33,7 +35,7 @@ export class UserService {
         this._users.next(Object.assign({}, this.dataStore).users);
       },
       (error) => {
-        console.log('Could not load users.');
+        throw error;
       });
   }
 }
