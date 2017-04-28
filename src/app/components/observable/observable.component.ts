@@ -7,10 +7,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
-import { User } from '../../core/interfaces/user';
-import { UserService } from '../../core/services/user/user.service';
+import { User } from '../../core/models/user';
 
-console.log('`Observable` component loaded asynchronously');
+import { UserService } from '../../core/services/user';
 
 @Component({
   selector: 'observable',
@@ -18,6 +17,15 @@ console.log('`Observable` component loaded asynchronously');
   templateUrl: './observable.component.html',
   styleUrls: ['./observable.component.css']
 })
+/*
+ * Smart Component
+ *
+ * This component still knows how to retrieve the users list from a service,
+ * and what type of list this is.
+ *
+ * But this component does not know how to present the users list to the user.
+ *
+ */
 export class ObservableComponent implements OnInit {
   public localState: any;
 

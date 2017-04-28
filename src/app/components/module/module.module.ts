@@ -1,14 +1,14 @@
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
+import { FormsModule } from '@angular/forms';
+
+import { RouterModule } from '@angular/router';
 import { routes } from './module.routes';
-import { ModuleComponent } from './module.component';
 
 import { MaterialModule } from '@angular/material';
 
-console.log('`Module` bundle loaded asynchronously');
+import { ModuleComponent } from './module.component';
 
 @NgModule({
   declarations: [

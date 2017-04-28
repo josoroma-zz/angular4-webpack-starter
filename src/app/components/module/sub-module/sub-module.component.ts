@@ -3,8 +3,6 @@ import {
   OnInit,
 } from '@angular/core';
 
-console.log('`SubModule` component loaded asynchronously');
-
 @Component({
   selector: 'sub-module',
   templateUrl: './sub-module.component.html',

@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { User } from '../../interfaces/user';
+import { User } from '../../models/user';
 
 @Injectable()
 export class UserService {

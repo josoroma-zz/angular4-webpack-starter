@@ -1,5 +1,9 @@
 import { SubModuleComponent } from './sub-module.component';
 
 export const routes = [
-  { path: '', component: SubModuleComponent,  pathMatch: 'full' },
+  {
+    path: '',
+    component: SubModuleComponent,
+    pathMatch: 'full'
+  }
 ];

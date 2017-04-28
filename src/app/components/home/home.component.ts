@@ -5,15 +5,8 @@ import {
 
 import { AppState } from '../../app.service';
 
-import { TitleService } from '../../core/services/title';
-import { XLargeDirective } from '../../core/directives/x-large';
-
 @Component({
   selector: 'home',
-  // We need to tell Angular's Dependency Injection which providers are in our app.
-  providers: [
-    TitleService
-  ],
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.css' ]
 })
@@ -22,14 +15,11 @@ export class HomeComponent implements OnInit {
   public localState = { value: '' };
 
   constructor(
-    public appState: AppState,
-    public titleService: TitleService
+    public appState: AppState
   ) {}
 
   public ngOnInit() {
-    console.log('`Home` component - ngOnInit');
-
-    this.title = this.titleService.get();
+    this.title = 'Home';
   }
 
   public submitState(value: string) {

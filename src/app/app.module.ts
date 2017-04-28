@@ -1,16 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import {
   NgModule,
   ApplicationRef,
   ErrorHandler
 } from '@angular/core';
+
 import {
   removeNgStyles,
   createNewHosts,
   createInputTransfer
 } from '@angularclass/hmr';
+
 import {
   RouterModule,
   PreloadAllModules
@@ -29,18 +32,16 @@ import { AppState, InternalStateType } from './app.service';
 
 import { GlobalErrorHandler } from './core/classes/globalErrorHandler';
 
-import { HomeComponent } from './pages/home';
-import { ObservableComponent } from './pages/observable';
-import { ObservableContainerComponent } from './pages/observable/observable.container';
-import { NoContentComponent } from './pages/no-content';
+import '../styles/styles.scss';
+import '../styles/headings.css';
 
-import { XLargeDirective } from './core/directives/x-large';
-
+/*
+ * Material
+ */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
+import { ComponentsModule } from './components';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -60,12 +61,7 @@ type StoreType = {
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent,
-    ObservableComponent,
-    ObservableContainerComponent,
-    HomeComponent,
-    NoContentComponent,
-    XLargeDirective
+    AppComponent
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -73,7 +69,8 @@ type StoreType = {
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
     BrowserAnimationsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    ComponentsModule
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
